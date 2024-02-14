@@ -13,4 +13,7 @@ Then, enter a sub-dir, run:
 ```fish
 # the executable name should all be "test"
 swift run test
+
+# or, just open in Xcode. Seems Xcode will inherit the environment variables from the shell session
+xed .
 ```
