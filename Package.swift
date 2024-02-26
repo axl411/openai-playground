@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "test",
+    name: "OpenAIPlayground",
     platforms: [.macOS(.v10_15)],
     dependencies: [
         .package(url: "https://github.com/MacPaw/OpenAI.git", branch: "main")
