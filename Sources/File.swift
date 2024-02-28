@@ -12,7 +12,9 @@ struct Entry {
         
 //        try await helloWorld(openAI: openAI)
 //        try await basic(openAI: openAI)
-        try await textCompletionToFunction(openAI: openAI)
+//        try await textCompletionToFunction(openAI: openAI)
+//        try await embeddings(openAI: openAI)
+        try await moderationModel(openAI: openAI)
     }
     
     private static func helloWorld(openAI: OpenAI) async throws {
@@ -81,5 +83,17 @@ struct Entry {
         let sqlQuery = json["sql_query"] as! String
         let myResult = findProduct(query: sqlQuery)
         print(myResult)
+    }
+    
+    private static func embeddings(openAI: OpenAI) async throws {
+        let query = EmbeddingsQuery(model: .textEmbeddingAda, input: "input text")
+        let result = try await openAI.embeddings(query: query)
+        dump(result.data.first!.embedding) // array of floats
+    }
+    
+    private static func moderationModel(openAI: OpenAI) async throws {
+        let query = ModerationsQuery(input: "I want to blow up school.", model: .textModerationLatest)
+        let result = try await openAI.moderations(query: query)
+        dump(result.results)
     }
 }

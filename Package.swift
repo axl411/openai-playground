@@ -7,7 +7,7 @@ let package = Package(
     name: "OpenAIPlayground",
     platforms: [.macOS(.v10_15)],
     dependencies: [
-        .package(url: "https://github.com/MacPaw/OpenAI.git", branch: "main")
+        .package(url: "https://github.com/MacPaw/OpenAI.git", exact: "0.2.6")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
