@@ -10,11 +10,33 @@ struct Entry {
         
         let openAI = OpenAI(apiToken: apiKey)
         
+        /* Usage Examples */
 //        try await helloWorld(openAI: openAI)
 //        try await basic(openAI: openAI)
 //        try await textCompletionToFunction(openAI: openAI)
 //        try await embeddings(openAI: openAI)
-        try await moderationModel(openAI: openAI)
+//        try await moderationModel(openAI: openAI)
+        
+        /* Example apps */
+//        try await NewsGenerator.assistJournalist(
+//            facts: ["The sky is blue", "The grass is green"],
+//            tone: "informal",
+//            wordsLength: 100,
+//            style: "blogpost",
+//            openAI: openAI
+//        )
+//        try await NewsGenerator.assistJournalist(
+//            facts: [
+//                "Trisolarians are coming to earth",
+//                "Earth technology is locked by them",
+//                "We need wall facers to consider counter measures"
+//            ],
+//            tone: "excited",
+//            wordsLength: 50,
+//            style: "news flash",
+//            openAI: openAI
+//        )
+        try await VideoSummarizer.summarize(openAI: openAI)
     }
     
     private static func helloWorld(openAI: OpenAI) async throws {
