@@ -11,7 +11,7 @@ struct Entry {
         let openAI = OpenAI(apiToken: apiKey)
         
         /* Usage Examples */
-//        try await helloWorld(openAI: openAI)
+        try await helloWorld(openAI: openAI)
 //        try await basic(openAI: openAI)
 //        try await textCompletionToFunction(openAI: openAI)
 //        try await embeddings(openAI: openAI)
@@ -36,7 +36,7 @@ struct Entry {
 //            style: "news flash",
 //            openAI: openAI
 //        )
-        try await VideoSummarizer.summarize(openAI: openAI)
+//        try await VideoSummarizer.summarize(openAI: openAI)
     }
     
     private static func helloWorld(openAI: OpenAI) async throws {

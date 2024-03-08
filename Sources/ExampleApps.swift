@@ -1,10 +1,3 @@
-//
-//  File 2.swift
-//  
-//
-//  Created by 顾超 on 2024/02/29.
-//
-
 import Foundation
 import OpenAI
 

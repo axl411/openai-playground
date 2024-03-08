@@ -5,16 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "OpenAIPlayground",
-    platforms: [.macOS(.v10_15)],
+    platforms: [.macOS(.v14)],
     dependencies: [
-        .package(url: "https://github.com/MacPaw/OpenAI.git", exact: "0.2.6")
+        .package(url: "https://github.com/MacPaw/OpenAI.git", .upToNextMajor(from: "0.2.6")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
             name: "OpenAIPlayground",
-            dependencies: ["OpenAI"],
+            dependencies: [
+                .product(name: "OpenAI", package: "OpenAI"),
+            ],
             resources: [
                 .process("Resources/video_transcripts.txt")
             ]
